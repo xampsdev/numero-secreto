@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,20 @@
         O número secreto está entre 1 e 50. Tente adivinhar!
     </h2>
     <div class="localNumero"><input type="number" name="NumeroSecreto" id="NumeroSecreto"></div>
+    <div class="status-bar">
+        <span class="contador">Tentativas: 0</span>
+        <span class="historico-label">Histórico:</span>
+        <span class="historico">—</span>
+    </div>
     <button class="botao">Adivinhar</button>
+    <div class="toggle-animacao">
+        <label class="toggle-label">
+            <input type="checkbox" id="toggleAnimacao" checked>
+            <span class="toggle-ui"></span>
+            <span class="toggle-text">Fundo animado</span>
+        </label>
+    </div>
+    <button class="botao-recomecar" id="botaoRecomecar">Jogar novamente</button>
     <p class="resultado"></p>
     <footer>
         <p>Criado por <a href="https://github.com/alexandrexan" target="_blank">XAN <span class="emoji">&#x1F448;</span></a></p>
