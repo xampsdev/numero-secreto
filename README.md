@@ -7,7 +7,7 @@ O projeto demonstra **lógica de programação, manipulação de DOM e controle 
 
 # Preview
 
-![preview do projeto](./assets/preview.png)
+![preview do projeto](./readme-github/previa-ns.png)
 
 ---
 
