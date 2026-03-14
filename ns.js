@@ -9,10 +9,44 @@ const input = document.querySelector('#NumeroSecreto');
 const contadorEl = document.querySelector('.contador');
 const historicoEl = document.querySelector('.historico');
 const botaoRecomecar = document.getElementById('botaoRecomecar');
+const dificuldadeSelect = document.getElementById('dificuldadeSelect');
+const subtitulo = document.querySelector('h2');
+const badgeDificuldade = document.getElementById('badgeDificuldade');
 
 function atualizarStatus() {
     if (contadorEl) contadorEl.textContent = `Tentativas: ${tentativas}`;
     if (historicoEl) historicoEl.textContent = historico.length ? historico.join(', ') : '—';
+}
+
+function atualizarSubtitulo() {
+    if (subtitulo) {
+        subtitulo.textContent = `O número secreto está entre 1 e ${numeroMaximo}. Tente adivinhar!`;
+    }
+    if (badgeDificuldade) {
+        const label = numeroMaximo === 20 ? 'FÁCIL' : numeroMaximo === 100 ? 'DIFÍCIL' : 'MÉDIO';
+        const classe = numeroMaximo === 20 ? 'badge-dificuldade--facil' : numeroMaximo === 100 ? 'badge-dificuldade--dificil' : 'badge-dificuldade--medio';
+        badgeDificuldade.textContent = label;
+        badgeDificuldade.classList.remove('badge-dificuldade--facil', 'badge-dificuldade--medio', 'badge-dificuldade--dificil');
+        badgeDificuldade.classList.add(classe);
+    }
+    if (dificuldadeSelect) {
+        const classeSelect = numeroMaximo === 20 ? 'dificuldade--facil' : numeroMaximo === 100 ? 'dificuldade--dificil' : 'dificuldade--medio';
+        dificuldadeSelect.classList.remove('dificuldade--facil', 'dificuldade--medio', 'dificuldade--dificil');
+        dificuldadeSelect.classList.add(classeSelect);
+    }
+}
+
+function reiniciarJogo() {
+    numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
+    tentativas = 0;
+    historico = [];
+    botao.disabled = false;
+    resultado.innerHTML = '';
+    input.value = '';
+    input.focus();
+    if (botaoRecomecar) botaoRecomecar.style.display = 'none';
+    atualizarStatus();
+    atualizarSubtitulo();
 }
 
 // Adicionar event listener para a tecla Enter
@@ -33,7 +67,7 @@ botao.addEventListener('click', function() {
     palpite = parseInt(palpite);
 
     if (palpite < 1 || palpite > numeroMaximo) {
-        resultado.textContent = 'Por favor, insira um número entre 1 e 50.';
+        resultado.textContent = `Por favor, insira um número entre 1 e ${numeroMaximo}.`;
         return;
     }
 
@@ -64,19 +98,19 @@ botao.addEventListener('click', function() {
 
 if (botaoRecomecar) {
     botaoRecomecar.addEventListener('click', function() {
-        numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
-        tentativas = 0;
-        historico = [];
-        botao.disabled = false;
-        resultado.innerHTML = '';
-        input.value = '';
-        input.focus();
-        botaoRecomecar.style.display = 'none';
-        atualizarStatus();
+        reiniciarJogo();
+    });
+}
+
+if (dificuldadeSelect) {
+    dificuldadeSelect.addEventListener('change', function() {
+        numeroMaximo = parseInt(dificuldadeSelect.value);
+        reiniciarJogo();
     });
 }
 
 atualizarStatus();
+atualizarSubtitulo();
 
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
@@ -91,11 +125,25 @@ canvas.width = window.innerWidth;
 // Opção 2: Função para gerar cores RGB aleatórias
 function getRandomRGBColor() {
     const colors = [
-        '#ff0000ff',
-        '#00ff00ff',
-        '#0000ffff'
+        '#FF00FF',
+        '#00FFFF',
+        '#FFFF00',
+        '#FFA500',
+        '#800080',
+        '#FF0000',
+        '#00FF00',
+        '#0000FF',
+        '#FFFFFF'
     ];
-    return colors[Math.floor(Math.random() * colors.length)];
+    const weights = [2, 2, 2, 2, 2, 2, 2, 2, 0.5];
+    let total = 0;
+    for (let i = 0; i < weights.length; i++) total += weights[i];
+    let r = Math.random() * total;
+    for (let i = 0; i < colors.length; i++) {
+        r -= weights[i];
+        if (r <= 0) return colors[i];
+    }
+    return colors[colors.length - 1];
 }
 const color = getRandomRGBColor();
 
@@ -110,8 +158,10 @@ const columns = Math.floor(canvas.width / fontSize);
 
 // Array para controlar a "chuva"
 const drops = [];
+const dropColors = [];
 for (let i = 0; i < columns; i++) {
     drops[i] = 1;
+    dropColors[i] = getRandomRGBColor();
 }
 
 function draw() {
@@ -120,17 +170,20 @@ function draw() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Estilo dos números
-    ctx.fillStyle = getRandomRGBColor();
     ctx.font = fontSize + "px monospace";
 
     // Desenha os números
     for (let i = 0; i < drops.length; i++) {
+        ctx.fillStyle = dropColors[i];
         const text = numbers.charAt(Math.floor(Math.random() * numbers.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         // Reinicia a queda
         if (drops[i] * fontSize > canvas.height && Math.random() > (isMobile ? 0.99 : 0.975)) {
             drops[i] = 0;
+            if (Math.random() > 0.5) {
+                dropColors[i] = getRandomRGBColor();
+            }
         }
 
         drops[i]++;
@@ -223,8 +276,10 @@ window.addEventListener("resize", () => {
         // Recalcular colunas conforme novo tamanho
         const newColumns = Math.floor(canvas.width / fontSize);
         drops.length = newColumns;
+        dropColors.length = newColumns;
         for (let i = 0; i < newColumns; i++) {
             if (typeof drops[i] === "undefined") drops[i] = 1;
+            if (typeof dropColors[i] === "undefined") dropColors[i] = getRandomRGBColor();
         }
     }, 250);
 });
