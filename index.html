@@ -1,62 +1,201 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Um jogo simples e interativo de adivinhação de números, onde o jogador tenta descobrir um número secreto. Com dicas, histórico de tentativas e um fundo animado para tornar a experiência mais divertida!">
-    <meta name="keywords" content="HTML, CSS, JavaScript, jogo, adivinhação, números, 1 a 50">
-    <meta name="author" content="Alexandre Xan">
-    
-    <title>Número Secreto</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Um jogo simples e interativo de adivinhação de números, onde o jogador tenta descobrir um número secreto. Com dicas, histórico de tentativas e um fundo animado para tornar a experiência mais divertida!"
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, jogo, adivinhação, números, 1 a 50"
+    />
+    <meta name="author" content="Alexandre Xan" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="imgverxan/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="imgverxan/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="imgverxan/favicon-16x16.png">
-    <link rel="manifest" href="imgverxan/site.webmanifest">
+    <title>Número Secreto - Por Xan</title>
 
-    <link rel="stylesheet" href="nsstylexan.css">
-</head>
-<body>
-    <canvas id="matrix"></canvas>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="imgverxan/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="imgverxan/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="imgverxan/favicon-16x16.png"
+    />
+    <link rel="manifest" href="imgverxan/site.webmanifest" />
+
+    <link rel="stylesheet" href="nsstylexan.css" />
+  </head>
+  <body>
     <main class="app">
-        <h1>
-            Bem-Vindo ao Jogo do Número Secreto!
-            <span class="badge-dificuldade" id="badgeDificuldade">MÉDIO</span>
-        </h1>
-        <h2>
-            O número secreto está entre 1 e 50. Tente adivinhar!
-        </h2>
+      <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Número Secreto">
+          <span class="brand-mark">?</span>
+          <span>Número<br />Secreto</span>
+        </a>
+      </header>
+
+      <section class="hero panel" aria-labelledby="tituloJogo">
+        <div class="hero-content">
+          <span class="eyebrow">Desafio lógico</span>
+          <h1 id="tituloJogo">
+            Número
+            <span>Secreto</span>
+          </h1>
+          <h2>O número secreto está entre 1 e 50. Tente adivinhar!</h2>
+          <button class="hero-button" type="button">Jogar</button>
+        </div>
+        <div class="hero-cube" aria-hidden="true">
+          <span>?</span>
+        </div>
+      </section>
+
+      <section class="panel how-to" aria-labelledby="comoJogarTitulo">
+        <h3 id="comoJogarTitulo">Como jogar</h3>
+        <ul class="steps">
+          <li>
+            <span class="step-icon">01</span>
+            <p>O jogo escolhe um número secreto dentro da dificuldade atual.</p>
+          </li>
+          <li>
+            <span class="step-icon">02</span>
+            <p>Digite seu palpite e envie para testar sua lógica.</p>
+          </li>
+          <li>
+            <span class="step-icon">03</span>
+            <p>A cada tentativa, descubra se o número é maior ou menor.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="panel difficulty-panel"
+        aria-labelledby="dificuldadeTitulo"
+      >
+        <div class="panel-heading">
+          <h3 id="dificuldadeTitulo">Escolha a dificuldade</h3>
+          <span class="badge-dificuldade" id="badgeDificuldade">MÉDIO</span>
+        </div>
+
         <div class="dificuldade">
-            <label for="dificuldadeSelect">Dificuldade</label>
-            <select id="dificuldadeSelect">
-                <option value="20">Fácil (1–20)</option>
-                <option value="50" selected>Médio (1–50)</option>
-                <option value="100">Difícil (1–100)</option>
-            </select>
+          <label for="dificuldadeSelect">Dificuldade</label>
+          <select id="dificuldadeSelect">
+            <option value="20">Fácil (1–20)</option>
+            <option value="50" selected>Médio (1–50)</option>
+            <option value="100">Difícil (1–100)</option>
+            <option value="200">Insano (1–200)</option>
+          </select>
+
+          <div class="difficulty-cards" aria-label="Escolha a dificuldade">
+            <button
+              class="difficulty-card difficulty-card--easy"
+              type="button"
+              data-difficulty="20"
+            >
+              <span class="difficulty-icon">◎</span>
+              <strong>Fácil</strong>
+              <span>1 a 20</span>
+              <small>Menos opções.</small>
+            </button>
+
+            <button
+              class="difficulty-card difficulty-card--medium is-active"
+              type="button"
+              data-difficulty="50"
+            >
+              <span class="difficulty-icon">⌖</span>
+              <strong>Médio</strong>
+              <span>1 a 50</span>
+              <small>Desafio clássico.</small>
+            </button>
+
+            <button
+              class="difficulty-card difficulty-card--hard"
+              type="button"
+              data-difficulty="100"
+            >
+              <span class="difficulty-icon">☠</span>
+              <strong>Difícil</strong>
+              <span>1 a 100</span>
+              <small>Mais risco.</small>
+            </button>
+
+            <button
+              class="difficulty-card difficulty-card--insane"
+              type="button"
+              data-difficulty="200"
+            >
+              <span class="difficulty-icon">☻</span>
+              <strong>Insano</strong>
+              <span>1 a 200</span>
+              <small>Sem margem.</small>
+            </button>
+          </div>
         </div>
+      </section>
+
+      <section class="panel game-panel" aria-labelledby="palpiteTitulo">
+        <div class="panel-heading">
+          <h3 id="palpiteTitulo">Seu palpite</h3>
+          <span class="contador">Tentativas: 0</span>
+        </div>
+
         <div class="localNumero">
-            <label class="sr-only" for="NumeroSecreto">Digite seu palpite</label>
-            <input type="number" name="NumeroSecreto" id="NumeroSecreto" min="1" max="50" step="1" inputmode="numeric" aria-label="Digite seu palpite">
+          <label class="sr-only" for="NumeroSecreto">Digite seu palpite</label>
+          <input
+            type="number"
+            name="NumeroSecreto"
+            id="NumeroSecreto"
+            min="1"
+            max="50"
+            step="1"
+            inputmode="numeric"
+            aria-label="Digite seu palpite"
+            placeholder="?"
+          />
         </div>
-        <div class="status-bar">
-            <span class="contador">Tentativas: 0</span>
-            <span class="historico-label">Histórico:</span>
-            <span class="historico">—</span>
-        </div>
+
         <button class="botao">Adivinhar</button>
-        <div class="toggle-animacao">
-            <label class="toggle-label">
-                <input type="checkbox" id="toggleAnimacao" checked>
-                <span class="toggle-ui"></span>
-                <span class="toggle-text">Fundo animado</span>
-            </label>
+
+        <div class="status-bar">
+          <span class="historico-label">Histórico</span>
+          <span class="historico">—</span>
         </div>
-        <button class="botao-recomecar" id="botaoRecomecar">Jogar novamente</button>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="resultadoTitulo">
+        <div class="panel-heading">
+          <h3 id="resultadoTitulo">Resultado</h3>
+        </div>
         <p class="resultado" role="status" aria-live="polite"></p>
-        <footer>
-            <p>Criado por <a href="https://github.com/alexandrexan" target="_blank">XAN <span class="emoji">&#x1F448;</span></a></p>
-        </footer>
+        <button class="botao-recomecar" id="botaoRecomecar">
+          Jogar novamente
+        </button>
+      </section>
+
+      <footer>
+        <strong>NÚMERO SECRETO</strong>
+        <p>
+          Criado por
+          <a
+            href="https://github.com/alexandrexan"
+            target="_blank"
+            rel="noreferrer"
+            >XAN</a
+          >
+        </p>
+      </footer>
     </main>
     <script src="ns.js"></script>
-</body>
+  </body>
 </html>
