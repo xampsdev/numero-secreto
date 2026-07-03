@@ -15,6 +15,8 @@
 
     <title>Número Secreto - Por Xan</title>
 
+    <meta name="theme-color" content="#030605" />
+    <link rel="icon" type="image/svg+xml" href="imgverxan/favicon.svg" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -38,25 +40,14 @@
   </head>
   <body>
     <main class="app">
-      <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Número Secreto">
-          <span class="brand-mark">?</span>
-          <span>Número<br />Secreto</span>
-        </a>
-      </header>
+      <header class="topbar"></header>
 
       <section class="hero panel" aria-labelledby="tituloJogo">
         <div class="hero-content">
           <span class="eyebrow">Desafio lógico</span>
-          <h1 id="tituloJogo">
-            Número
-            <span>Secreto</span>
-          </h1>
+          <h1 id="tituloJogo">Número <span>Secreto</span></h1>
           <h2>O número secreto está entre 1 e 50. Tente adivinhar!</h2>
           <button class="hero-button" type="button">Jogar</button>
-        </div>
-        <div class="hero-cube" aria-hidden="true">
-          <span>?</span>
         </div>
       </section>
 
@@ -184,15 +175,12 @@
       </section>
 
       <footer>
-        <strong>NÚMERO SECRETO</strong>
-        <p>
+        <p class="created-by">
           Criado por
-          <a
-            href="https://github.com/alexandrexan"
-            target="_blank"
-            rel="noreferrer"
-            >XAN</a
-          >
+          <a href="https://github.com/alexandrexan" target="_blank" rel="noreferrer">XAN</a>
+        </p>
+        <p class="copyright">
+          Número Secreto - Todos os direitos reservados © <span id="anoAtual"></span>
         </p>
       </footer>
     </main>

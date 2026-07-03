@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Número Secreto">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#7cff00" stop-opacity="0.34" />
+      <stop offset="62%" stop-color="#49a900" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#030605" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="shield" x1="14" y1="8" x2="50" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0d1a13" />
+      <stop offset="100%" stop-color="#020504" />
+    </linearGradient>
+    <filter id="greenShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#7cff00" flood-opacity="0.68" />
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#030605" />
+  <rect width="64" height="64" rx="14" fill="url(#glow)" />
+  <path
+    d="M32 6 52 15v17c0 13.8-8.3 22.4-20 27-11.7-4.6-20-13.2-20-27V15L32 6Z"
+    fill="url(#shield)"
+    stroke="#7cff00"
+    stroke-width="3"
+    stroke-linejoin="round"
+    filter="url(#greenShadow)"
+  />
+  <path
+    d="M26.4 25.2c.3-5 3.8-8.2 9-8.2 5.6 0 9.1 3.2 9.1 8 0 3.7-1.8 5.8-5.2 7.9-2.7 1.7-3.4 2.7-3.4 5.5v1.2h-7v-1.7c0-4 1.5-6.2 4.8-8.3 2.5-1.6 3.3-2.6 3.3-4.3 0-1.8-1.3-3-3.4-3-2.2 0-3.5 1.3-3.7 3.4l-.1.8h-3.5l.1-1.3Z"
+    fill="#d8ffd0"
+  />
+  <circle cx="32.4" cy="47.4" r="3.8" fill="#7cff00" filter="url(#greenShadow)" />
+</svg>
