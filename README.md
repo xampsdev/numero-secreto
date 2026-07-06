@@ -11,7 +11,7 @@ Projeto online:
 https://alexandrexan.github.io/numero-secreto/
 
 Repositório:  
-https://github.com/alexandrexan/numero-secreto
+[https://github.com/alexandrexan/numero-secreto](https://github.com/xampsdev/numero-secreto)
 
 ---
 
