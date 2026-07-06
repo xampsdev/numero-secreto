@@ -5,12 +5,6 @@ O projeto demonstra **lógica de programação, manipulação de DOM e controle 
 
 ---
 
-# Preview
-
-![preview do projeto](./previa/previa-ns.gif)
-
----
-
 # Demo
 
 Projeto online:  
