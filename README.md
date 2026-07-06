@@ -8,7 +8,7 @@ O projeto demonstra **lógica de programação, manipulação de DOM e controle 
 # Demo
 
 Projeto online:  
-https://alexandrexan.github.io/numero-secreto/
+[https://alexandrexan.github.io/numero-secreto/](https://xampsdev.github.io/numero-secreto/)
 
 Repositório:  
 [https://github.com/alexandrexan/numero-secreto](https://github.com/xampsdev/numero-secreto)
