@@ -455,6 +455,17 @@ button:disabled {
   text-shadow: 0 0 18px currentColor;
 }
 
+.difficulty-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .difficulty-card--easy {
   color: var(--green);
 }
@@ -978,8 +989,20 @@ h2 {
 }
 
 .difficulty-icon {
-  min-height: 34px;
-  font-size: 1.8rem;
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+}
+
+.difficulty-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .difficulty-card strong {
