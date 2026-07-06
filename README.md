@@ -1,4 +1,4 @@
-#  Número Secreto
+#  Número Secreto 2.0
 
 Jogo interativo desenvolvido com **HTML, CSS e JavaScript** onde o usuário precisa descobrir um número secreto gerado aleatoriamente pelo sistema.  
 O projeto demonstra **lógica de programação, manipulação de DOM e controle de estado da interface**, conceitos essenciais no desenvolvimento Front-end.
