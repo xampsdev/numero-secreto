@@ -1123,6 +1123,7 @@ footer {
     grid-template-columns: 1.1fr 0.95fr 0.95fr;
     align-items: start;
     margin-inline: auto;
+    row-gap: 10px;
   }
 
   .topbar,
@@ -1147,6 +1148,8 @@ footer {
   }
 
   .game-panel {
+    margin-top: -85px;
+    align-self: start;
     grid-column: 2;
     grid-row: 3;
   }
