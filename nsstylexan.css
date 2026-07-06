@@ -1079,7 +1079,7 @@ footer {
   }
 
   footer .created-by a:hover {
-    color: var(--yellow);
+    color: var(--text);
     transform: translateY(-2px);
   }
 
