@@ -1,4 +1,4 @@
-#  Número Secreto
+#  Número Secreto 2.0
 
 Jogo interativo desenvolvido com **HTML, CSS e JavaScript** onde o usuário precisa descobrir um número secreto gerado aleatoriamente pelo sistema.  
 O projeto demonstra **lógica de programação, manipulação de DOM e controle de estado da interface**, conceitos essenciais no desenvolvimento Front-end.
@@ -8,10 +8,10 @@ O projeto demonstra **lógica de programação, manipulação de DOM e controle 
 # Demo
 
 Projeto online:  
-https://alexandrexan.github.io/numero-secreto/
+[https://alexandrexan.github.io/numero-secreto/](https://xampsdev.github.io/numero-secreto/)
 
 Repositório:  
-https://github.com/alexandrexan/numero-secreto
+[https://github.com/alexandrexan/numero-secreto](https://github.com/xampsdev/numero-secreto)
 
 ---
 
@@ -123,6 +123,8 @@ Meu objetivo é construir aplicações web interativas que combinem **interfaces
 Alexandre Araújo
 
 GitHub  
+https://github.com/xampsdev
+
 https://github.com/alexandrexan
 
 Portfólio  
