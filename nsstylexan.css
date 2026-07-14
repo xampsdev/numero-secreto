@@ -448,20 +448,21 @@ button:disabled {
 .difficulty-icon {
   display: grid;
   place-items: center;
-  min-height: 42px;
+  width: min(3rem, 100%);
+  aspect-ratio: 1 / 1;
   color: currentColor;
-  font-size: 2.2rem;
   line-height: 1;
   text-shadow: 0 0 18px currentColor;
 }
 
 .difficulty-icon svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: min(2.4rem, 100%);
+  height: auto;
+  max-width: 100%;
   display: block;
   stroke: currentColor;
   fill: none;
-  stroke-width: 1.4;
+  stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -966,41 +967,46 @@ h2 {
 
 .difficulty-card.is-active {
   box-shadow:
-    0 0 18px rgba(124, 255, 0, 0.14),
-    inset 0 0 18px rgba(124, 255, 0, 0.06);
+    0 0 18px rgba(123, 255, 0, 0.534),
+    inset 0 0 18px rgba(123, 255, 0, 0.5);
 }
 
 .difficulty-card--medium.is-active {
   box-shadow:
-    0 0 18px rgba(255, 196, 0, 0.14),
-    inset 0 0 18px rgba(255, 196, 0, 0.06);
+    0 0 18px rgba(255, 196, 0, 0.525),
+    inset 0 0 18px rgba(255, 196, 0, 0.532);
 }
 
 .difficulty-card--hard.is-active {
   box-shadow:
-    0 0 18px rgba(255, 75, 62, 0.14),
-    inset 0 0 18px rgba(255, 75, 62, 0.06);
+    0 0 18px rgba(255, 75, 62, 0.53),
+    inset 0 0 18px rgba(255, 75, 62, 0.573);
 }
 
 .difficulty-card--insane.is-active {
   box-shadow:
-    0 0 18px rgba(177, 92, 255, 0.14),
-    inset 0 0 18px rgba(177, 92, 255, 0.06);
+    0 0 18px rgba(176, 92, 255, 0.521),
+    inset 0 0 18px rgba(176, 92, 255, 0.55);
 }
 
 .difficulty-icon {
   display: grid;
   place-items: center;
-  min-height: 42px;
+  width: min(3rem, 100%);
+  aspect-ratio: 1 / 1;
+  color: currentColor;
+  line-height: 1;
+  text-shadow: 0 0 18px currentColor;
 }
 
 .difficulty-icon svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: min(2.4rem, 100%);
+  height: auto;
+  max-width: 100%;
   display: block;
   stroke: currentColor;
   fill: none;
-  stroke-width: 1.4;
+  stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -1015,6 +1021,7 @@ h2 {
 
 .difficulty-card small {
   font-size: 0.68rem;
+  color: var(--muted);
 }
 
 .localNumero {
