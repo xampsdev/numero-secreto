@@ -1,133 +1,92 @@
-#  Número Secreto 2.0
+# Número Secreto 2.0
 
-Jogo interativo desenvolvido com **HTML, CSS e JavaScript** onde o usuário precisa descobrir um número secreto gerado aleatoriamente pelo sistema.  
-O projeto demonstra **lógica de programação, manipulação de DOM e controle de estado da interface**, conceitos essenciais no desenvolvimento Front-end.
+Jogo web interativo desenvolvido para praticar e aplicar fundamentos de desenvolvimento Front-end.
 
----
+O jogador precisa descobrir um número secreto gerado aleatoriamente pelo sistema. A cada tentativa, a interface informa se o palpite deve ser maior ou menor, permitindo que o jogador utilize lógica para reduzir as possibilidades até encontrar a resposta correta.
 
-# Demo
+A versão 2.0 evoluiu a proposta original com uma interface mais elaborada, diferentes níveis de dificuldade, feedback visual e uma experiência mais completa para o usuário.
 
-Projeto online:  
-[https://alexandrexan.github.io/numero-secreto/](https://xampsdev.github.io/numero-secreto/)
+## Preview
 
-Repositório:  
-[https://github.com/alexandrexan/numero-secreto](https://github.com/xampsdev/numero-secreto)
+<p align="center">
+  <img src="./previa/ns20.png" alt="Preview do Número Secreto 2.0" width="500">
+</p>
 
----
+## Demonstração
 
-# Stack utilizada
+**Jogue online:**
+
+[![Acessar o jogo](https://img.shields.io/badge/Jogar%20agora-Número%20Secreto-7CFC00?style=for-the-badge)](https://xampsdev.github.io/numero-secreto/)
+
+**Repositório:**
+
+[![GitHub](https://img.shields.io/badge/Ver%20código-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/xampsdev/numero-secreto)
+
+## Tecnologias utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
-- Manipulação de DOM
-- Lógica condicional
-- Geração de números aleatórios
+- Manipulação do DOM
+- Git e GitHub
 
----
+## Funcionalidades
 
-# Funcionalidades
+- Geração aleatória do número secreto
+- Diferentes níveis de dificuldade
+- Validação das tentativas do jogador
+- Feedback indicando se o número secreto é maior ou menor
+- Contagem de tentativas
+- Atualização dinâmica da interface
+- Reinicialização do jogo após uma vitória
+- Interface responsiva para diferentes tamanhos de tela
+- Feedback visual durante a interação
+- Histórico de partidas
 
-- geração automática de número secreto
-- validação de entrada do usuário
-- feedback dinâmico indicando se o número é **maior ou menor**
-- contagem de tentativas
-- atualização dinâmica da interface
-- reinicialização do jogo após acerto
+## Como funciona
 
----
+O fluxo principal do jogo é:
 
-# Demonstração da lógica
+1. O jogador escolhe um nível de dificuldade.
+2. O sistema gera um número secreto dentro do intervalo correspondente.
+3. O jogador informa um palpite.
+4. O sistema compara o palpite com o número secreto.
+5. A interface informa se o número secreto é:
+   - maior que o palpite;
+   - menor que o palpite;
+   - igual ao palpite.
+6. O jogador continua tentando até encontrar o número correto.
 
-Fluxo principal da aplicação:
-
-1. o sistema gera um número aleatório
-2. o usuário digita um número
-3. o sistema compara o valor digitado com o número secreto
-4. o sistema retorna feedback:
-   - número maior
-   - número menor
-   - número correto
-5. a interface é atualizada dinamicamente no navegador
-
----
-
-# Conceitos técnicos aplicados
-
-Este projeto demonstra domínio de fundamentos importantes do desenvolvimento front-end:
+## Conceitos técnicos aplicados
 
 ### Manipulação do DOM
-Atualização dinâmica de elementos HTML a partir de eventos do usuário.
+
+Atualização dinâmica dos elementos da interface de acordo com as ações do jogador.
 
 ### Eventos do navegador
-Captura de interações do usuário para processar tentativas.
+
+Captura e tratamento das interações realizadas pelo usuário, como cliques e envio de tentativas.
 
 ### Estruturas condicionais
-Uso de lógica de comparação para fornecer feedback ao jogador.
+
+Uso de lógica de comparação para determinar o feedback exibido ao jogador.
 
 ### Controle de estado
-Gerenciamento das tentativas e reinicialização do jogo.
 
-### Organização de código JavaScript
-Separação da lógica do jogo e da interface.
+Gerenciamento de informações como:
 
----
+- número secreto;
+- dificuldade selecionada;
+- tentativas realizadas;
+- histórico de partidas;
+- estado atual do jogo.
 
-# Estrutura do projeto
+### Geração de números aleatórios
 
-**index.html**  
-estrutura da interface
+Utilização de JavaScript para gerar o número secreto dentro do intervalo definido pela dificuldade selecionada.
 
-**nsstyle.css**  
-estilização da aplicação
+### Organização de código
 
-**ns.js**  
-lógica principal do jogo
-
----
-
-# Aprendizados obtidos
-
-Durante o desenvolvimento deste projeto foram praticados:
-
-- manipulação direta do DOM
-- lógica de comparação numérica
-- geração de números aleatórios em JavaScript
-- construção de interfaces interativas
-- feedback visual ao usuário
-
----
-
-# Melhorias futuras
-
-- implementação de **responsividade completa**
-- animações de feedback
-- ranking de tentativas
-- armazenamento de pontuação com **LocalStorage**
-- integração com **API de voz**
-
----
-
-# Objetivo profissional
-
-Este projeto faz parte da minha jornada de transição para a área de:
-
-**Desenvolvimento Front-end e Inteligência Artificial**
-
-Meu objetivo é construir aplicações web interativas que combinem **interfaces modernas com lógica e automação baseada em IA**.
-
----
-
-# Autor
-
-Alexandre Araújo
-
-GitHub  
-https://github.com/xampsdev
-
-https://github.com/alexandrexan
-
-Portfólio  
-https://alexandrexan.github.io/projetos-do-xan/
+Separação entre a estrutura da interface, a estilização visual e a lógica principal da aplicação.
 
 ---
