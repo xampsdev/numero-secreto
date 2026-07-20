@@ -89,4 +89,14 @@ Utilização de JavaScript para gerar o número secreto dentro do intervalo defi
 
 Separação entre a estrutura da interface, a estilização visual e a lógica principal da aplicação.
 
----
+## Próximas melhorias
+
+- aprimorar as animações de feedback;
+- adicionar novos modos de jogo;
+- melhorar o sistema de histórico.
+
+## Autor
+
+**XAN**
+
+[GitHub](https://github.com/xampsdev) · [Portfólio](https://alexandrexan.github.io/projetos-do-xan/)
