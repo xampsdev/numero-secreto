@@ -9,7 +9,7 @@ A versão 2.0 evoluiu a proposta original com uma interface mais elaborada, dife
 ## Preview
 
 <p align="center">
-  <img src="./previa/ns20.png" alt="Preview do Número Secreto 2.0" width="500">
+  <img src="./previa/ns20.png" alt="Preview do Número Secreto 2.0" width="400">
 </p>
 
 ## Demonstração
